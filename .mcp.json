@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "storelink": {
+      "type": "http",
+      "url": "https://dashboard.store.link/mcp"
+    }
+  }
+}

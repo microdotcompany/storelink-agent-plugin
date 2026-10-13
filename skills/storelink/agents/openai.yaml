@@ -1,0 +1,12 @@
+interface:
+  display_name: "Store.link"
+  short_description: "Manage orders, products, coupons and your storefront"
+  brand_color: "#00AB55"
+  default_prompt: "Use $storelink to check sales, update orders, edit products, create coupons, or change my Store.link storefront."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "storelink"
+      description: "Store.link connector"
+      transport: "streamable_http"
+      url: "https://dashboard.store.link/mcp"

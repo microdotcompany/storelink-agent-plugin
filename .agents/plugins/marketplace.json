@@ -1,0 +1,20 @@
+{
+  "name": "storelink",
+  "interface": {
+    "displayName": "Store.link"
+  },
+  "plugins": [
+    {
+      "name": "storelink",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

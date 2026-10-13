@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "storelink",
+  "description": "The official Store.link plugin.",
+  "owner": {
+    "name": "Store.link",
+    "email": "care@store.link",
+    "url": "https://store.link"
+  },
+  "plugins": [
+    {
+      "name": "storelink",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npx -y @anthropic-ai/claude-code plugin validate --strict .
+      - name: Versions match
+        run: |
+          claude=$(jq -r .version .claude-plugin/plugin.json)
+          portable=$(jq -r .version plugin.json)
+          skill=$(sed -n 's/^  version: //p' skills/storelink/SKILL.md)
+          echo "claude=$claude portable=$portable skill=$skill"
+          [ "$claude" = "$portable" ] && [ "$claude" = "$skill" ]
+      - name: No forbidden files
+        run: |
+          ! find . -name .DS_Store -o -type l -not -path './.git/*' | grep .
+          [ ! -f .gitmodules ]

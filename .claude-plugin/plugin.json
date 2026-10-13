@@ -1,0 +1,27 @@
+{
+  "name": "storelink",
+  "displayName": "Store.link",
+  "version": "1.0.0",
+  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design and sales.",
+  "author": {
+    "name": "Store.link",
+    "email": "care@store.link",
+    "url": "https://store.link"
+  },
+  "homepage": "https://store.link",
+  "repository": "https://github.com/microdotcompany/storelink-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "storelink",
+    "ecommerce",
+    "online-store",
+    "orders",
+    "products",
+    "coupons"
+  ],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://store.link/help/",
+  "supportUrl": "https://store.link/help/contact",
+  "privacyPolicyUrl": "https://store.link/privacy",
+  "termsOfServiceUrl": "https://store.link/terms"
+}
