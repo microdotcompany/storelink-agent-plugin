@@ -9,7 +9,7 @@ Run your [Store.link](https://store.link) store from a conversation:
 - "Write an About page"
 - "Change the hero text"
 
-The plugin connects your app to the Store.link connector at `https://dashboard.store.link/mcp` and adds a skill that teaches the assistant how a Store.link store works. You sign in with your Store.link account the first time you use it. The assistant can do what your role allows in each of your stores, and nothing else.
+The plugin connects your app to the Store.link connector at `https://dashboard.store.link/mcp` and adds a skill that teaches the assistant how a Store.link store works. You sign in with your Store.link account on first use. The assistant can do only what your role allows in each store.
 
 ## Install
 
@@ -44,11 +44,16 @@ codex mcp add storelink --url https://dashboard.store.link/mcp && codex mcp logi
 
 ## What it can do
 
-Read sales, orders, customers, products, coupons, pages and design; update order status and add order notes; take orders for customers; add and edit products; create, change and delete coupons and pages; change the storefront design and basic store settings.
+- **Sales:** summaries, breakdowns (by product, day, coupon and more) and shipping times
+- **Orders and customers:** look up orders and customers, update order status, add notes, take orders for customers
+- **Products:** add and edit products, reorder categories, sync the Product Sheet
+- **Coupons and pages:** create, change and delete
+- **Design:** theme, colors, logo, menus and page sections
+- **Settings:** store status and password, currency, language and storefront text, SEO, domains, shipping, the checkout form, where orders are sent, analytics, pixels, custom code, webhooks and team members
 
-Billing, store creation and deletion, domains, payment gateways, team members and custom code stay in the [dashboard](https://dashboard.store.link).
+Payments, billing and plans, and creating, deleting or transferring a store stay in the [dashboard](https://dashboard.store.link).
 
-Changes go live on your storefront immediately. The assistant asks before anything that emails a customer.
+Changes go live immediately. The assistant asks before emailing a customer or rebuilding your products from the Product Sheet.
 
 ## Disconnect
 

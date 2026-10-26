@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "storelink",
-  "version": "1.0.0",
-  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design and sales.",
+  "version": "1.1.0",
+  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design, store settings and sales.",
   "author": {
     "name": "Store.link",
     "email": "care@store.link",
@@ -24,7 +24,7 @@
       "interface": {
         "displayName": "Store.link",
         "shortDescription": "Manage orders, products, coupons and your storefront",
-        "longDescription": "Connect your Store.link account to check sales, find and update orders, add or edit products, create coupons, write store pages and change your storefront design. Every action uses your role in each store, and changes go live immediately.",
+        "longDescription": "Check sales, manage orders and products, create coupons and pages, change your storefront design, and manage settings like shipping, checkout, domains, translations and your team. Every action uses your role in each store, and changes go live immediately.",
         "developerName": "Store.link",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],

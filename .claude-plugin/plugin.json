@@ -1,8 +1,8 @@
 {
   "name": "storelink",
   "displayName": "Store.link",
-  "version": "1.0.0",
-  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design and sales.",
+  "version": "1.1.0",
+  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design, store settings and sales.",
   "author": {
     "name": "Store.link",
     "email": "care@store.link",
