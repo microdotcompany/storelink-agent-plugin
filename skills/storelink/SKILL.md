@@ -2,7 +2,7 @@
 name: storelink
 description: Use when the user wants to manage a Store.link online store, including sales, best sellers and shipping times, orders (find, ship, cancel, add tracking, take an order for a customer), products (add, edit, price, stock, hide), categories, coupons, pages (About, FAQ, policies), storefront design (hero, page sections, colors, logo, menus, announcement bar), store settings (open, closed or test mode, password, currency, language, shipping, checkout form, SEO, domain, where orders are sent, analytics, pixels, custom code, webhooks), team members and customers. Uses the Store.link connector tools.
 metadata:
-  version: 1.1.0
+  version: 1.1.1
 ---
 
 # Store.link
