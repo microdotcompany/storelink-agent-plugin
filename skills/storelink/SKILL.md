@@ -2,7 +2,7 @@
 name: storelink
 description: Use when the user wants to manage a Store.link online store, including sales, best sellers and shipping times, orders (find, ship, cancel, add tracking, take an order for a customer), products (add, edit, price, stock, hide), categories, coupons, pages (About, FAQ, policies), storefront design (hero, page sections, colors, logo, menus, announcement bar), store settings (open, closed or test mode, password, currency, language, shipping, checkout form, SEO, domain, where orders are sent, analytics, pixels, custom code, webhooks), team members and customers. Uses the Store.link connector tools.
 metadata:
-  version: 1.1.1
+  version: 1.1.2
 ---
 
 # Store.link
@@ -11,7 +11,7 @@ Store.link runs online stores. The connector's tools read and change the stores 
 
 ## Before you start
 
-- **No Store.link tools?** The connector isn't connected or signed in. Ask the user to add Store.link in their app's connector or MCP settings and sign in with their Store.link account. Setup steps for each app are in the dashboard under Settings → Integrations → AI agents.
+- **No Store.link tools?** The connector isn't connected or signed in. Ask the user to add Store.link in their app's connector or MCP settings and sign in with their Store.link account. Setup steps for each app are on the dashboard's **AI agents** page (https://dashboard.store.link/ai-agents).
 - **Pick the store.** Call `list_stores`. If there are several and the user hasn't said which, ask. Pass that `store_id` on every call for the rest of the conversation.
 - **Roles.** Tools act with the user's role in each store, so some may be missing or return `insufficient_permission`. Domains, and resending or cancelling invites, are owner only. Say which role is needed (the owner changes roles in the dashboard) and don't retry.
 

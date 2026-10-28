@@ -57,7 +57,7 @@ Changes go live immediately. The assistant asks before emailing a customer or re
 
 ## Disconnect
 
-In the Store.link dashboard, go to Settings → Integrations → AI agents and click **Disconnect** next to the app.
+In the Store.link dashboard, open **AI agents** in the sidebar and click **Disconnect** next to the app.
 
 ## Support
 
