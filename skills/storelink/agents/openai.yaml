@@ -1,8 +1,8 @@
 interface:
   display_name: "Store.link"
-  short_description: "Manage orders, products, coupons and your storefront"
+  short_description: "Create and run your Store.link store"
   brand_color: "#00AB55"
-  default_prompt: "Use $storelink to check sales, update orders, edit products, create coupons, or change my Store.link storefront."
+  default_prompt: "Use $storelink to create a store, add products, ship orders or see what sold this week."
 dependencies:
   tools:
     - type: "mcp"

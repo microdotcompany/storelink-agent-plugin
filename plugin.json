@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "storelink",
-  "version": "1.1.2",
-  "description": "Run your Store.link store from a conversation: orders, products, coupons, pages, design, store settings and sales.",
+  "version": "1.0.0",
+  "description": "Start an online store with a conversation. Add products, manage orders, check sales and make it your own with Store.link.",
   "author": {
     "name": "Store.link",
     "email": "care@store.link",
@@ -23,19 +23,22 @@
     "com.openai": {
       "interface": {
         "displayName": "Store.link",
-        "shortDescription": "Manage your online store",
-        "longDescription": "Check sales, manage orders and products, create coupons and pages, change your storefront design, and manage settings like shipping, checkout, domains, translations and your team. Every action uses your role in each store, and changes go live immediately.",
+        "shortDescription": "Create and run your online store",
+        "longDescription": "Store.link for ChatGPT lets you create and run an online store from a conversation. Tell it what you want to sell to get started. Your products live in Google Sheets, and changes in the sheet sync to your store.\n\nAlready have a Store.link store? Connect it to ChatGPT to add products, update prices and stock, or find an order and mark it as shipped. Ask what sold this week or which products sell best.",
         "developerName": "Store.link",
         "category": "Business & Operations",
-        "capabilities": ["Read", "Write"],
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
         "websiteURL": "https://store.link",
         "supportURL": "https://store.link/help/contact",
         "privacyPolicyURL": "https://store.link/privacy",
         "termsOfServiceURL": "https://store.link/terms",
         "defaultPrompt": [
-          "What sold this week?",
-          "Mark my latest order as shipped",
-          "Create a 10% coupon that ends Sunday"
+          "Create a store for my homemade candles.",
+          "Mark my latest order as shipped.",
+          "What sold this week?"
         ],
         "brandColor": "#00AB55",
         "composerIcon": "./assets/icon.png",
@@ -46,33 +49,51 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Weekly sales summary",
-              "prompt": "What sold this week in my store?",
-              "tools_triggered": ["list_stores", "get_sales_summary"],
-              "expected_behavior": "Reports the last 7 days' orders, sales in the store's currency, average order value, conversion rate and top products, each compared with the previous 7 days."
-            },
-            {
-              "description": "Ship an order with tracking",
-              "prompt": "Mark my latest order as shipped with tracking number 1Z999AA10123456784.",
-              "tools_triggered": ["list_stores", "list_orders", "get_order", "update_order_status"],
-              "expected_behavior": "Finds the newest order, asks for confirmation naming the customer who will be emailed, then sets the order to shipped with the tracking number in the note and confirms."
-            },
-            {
-              "description": "Create a percentage coupon",
-              "prompt": "Create a 10% coupon called WEEKEND10 that ends this Sunday.",
-              "tools_triggered": ["list_stores", "create_coupon"],
-              "expected_behavior": "Creates WEEKEND10 as 10% off the whole order, valid until the end of this Sunday, and reports the code and end date."
+              "description": "Create a store",
+              "prompt": "Create a store called Crumb & Co that sells bread and pastries, priced in euros, with orders sent to my email.",
+              "tools_triggered": [
+                "create_store"
+              ],
+              "expected_behavior": "Asks whether customers pick up, get delivery or both, and offers to add products. Then creates and publishes Crumb & Co, with sample products if none were given, and shares the storefront and design links. If Store.link needs Google Sheets access first, shares the access link and waits until the user is done."
             },
             {
               "description": "Add a product to a category",
               "prompt": "Add a product called Classic Tee at $24 in the Tees category.",
-              "tools_triggered": ["list_stores", "get_store", "create_product"],
+              "tools_triggered": [
+                "list_stores",
+                "get_store",
+                "create_product"
+              ],
               "expected_behavior": "Checks the store's currency and variant options, asks which variants to offer if the store has any, creates Classic Tee at 24 in Tees, and says whether it is live or pending sync."
+            },
+            {
+              "description": "Ship an order with tracking",
+              "prompt": "Mark my latest order as shipped with tracking number 1Z999AA10123456784.",
+              "tools_triggered": [
+                "list_stores",
+                "list_orders",
+                "get_order",
+                "update_order_status"
+              ],
+              "expected_behavior": "Finds the newest order, asks for confirmation naming the customer who will be emailed, then sets the order to shipped with the tracking number in the note and confirms."
+            },
+            {
+              "description": "Weekly sales summary",
+              "prompt": "What sold this week in my store?",
+              "tools_triggered": [
+                "list_stores",
+                "get_sales_summary"
+              ],
+              "expected_behavior": "Reports the last 7 days' orders, sales in the store's currency, average order value, conversion rate and top products, each compared with the previous 7 days."
             },
             {
               "description": "Write and publish an About page",
               "prompt": "Write an About page for my store.",
-              "tools_triggered": ["list_stores", "get_store", "create_page"],
+              "tools_triggered": [
+                "list_stores",
+                "get_store",
+                "create_page"
+              ],
               "expected_behavior": "Drafts an About page from the store's name and products, asks for approval, creates the page and shares its storefront URL."
             }
           ],
@@ -93,7 +114,7 @@
         }
       },
       "publication": {
-        "release_notes": "First public release: check sales and manage orders, products, coupons, pages, storefront design and store settings."
+        "release_notes": "Create your Store.link store from a conversation. Add products, manage orders, see what's selling and make the storefront your own."
       }
     }
   }

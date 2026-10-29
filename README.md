@@ -1,15 +1,14 @@
 # Store.link plugin for Claude, ChatGPT and Codex
 
-Run your [Store.link](https://store.link) store from a conversation:
+[Store.link](https://store.link) turns a Google Sheet into an online store. This plugin lets you create and run that store from a conversation. Ask things like:
 
-- "What sold this week?"
-- "Mark order 10452 shipped and add the tracking number"
+- "Create a store for my homemade candles"
 - "Add this product at $24 in Tees"
+- "Mark order 10452 shipped and add the tracking number"
+- "What sold this week?"
 - "Make a 10% coupon that ends Sunday"
 - "Write an About page"
 - "Change the hero text"
-
-The plugin connects your app to the Store.link connector at `https://dashboard.store.link/mcp` and adds a skill that teaches the assistant how a Store.link store works. You sign in with your Store.link account on first use. The assistant can do only what your role allows in each store.
 
 ## Install
 
@@ -44,16 +43,15 @@ codex mcp add storelink --url https://dashboard.store.link/mcp && codex mcp logi
 
 ## What it can do
 
-- **Sales:** summaries, breakdowns (by product, day, coupon and more) and shipping times
-- **Orders and customers:** look up orders and customers, update order status, add notes, take orders for customers
-- **Products:** add and edit products, reorder categories, sync the Product Sheet
-- **Coupons and pages:** create, change and delete
-- **Design:** theme, colors, logo, menus and page sections
-- **Settings:** store status and password, currency, language and storefront text, SEO, domains, shipping, the checkout form, where orders are sent, analytics, pixels, custom code, webhooks and team members
+- **Start a store:** tell it what you sell and get a live store with its own link
+- **Products:** add products, change prices and stock, hide what you're not selling
+- **Orders and customers:** find orders, mark them shipped, add tracking, take orders that come in by phone or chat
+- **Sales:** what sold, your best sellers and how fast you ship
+- **Coupons and pages:** make discount codes, write About and FAQ pages
+- **Design:** colors, logo, menus and homepage sections
+- **Settings:** shipping, checkout, your domain, language, your team and more
 
-Payments, billing and plans, and creating, deleting or transferring a store stay in the [dashboard](https://dashboard.store.link).
-
-Changes go live immediately. The assistant asks before emailing a customer or rebuilding your products from the Product Sheet.
+Payments, billing and deleting a store stay in the [dashboard](https://dashboard.store.link).
 
 ## Disconnect
 
