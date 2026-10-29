@@ -49,52 +49,53 @@
         "test_cases": {
           "positive": [
             {
-              "description": "Create a store",
-              "prompt": "Create a store called Crumb & Co that sells bread and pastries, priced in euros, with orders sent to my email.",
-              "tools_triggered": [
-                "create_store"
-              ],
-              "expected_behavior": "Asks whether customers pick up, get delivery or both, and offers to add products. Then creates and publishes Crumb & Co, with sample products if none were given, and shares the storefront and design links. If Store.link needs Google Sheets access first, shares the access link and waits until the user is done."
-            },
-            {
-              "description": "Add a product to a category",
-              "prompt": "Add a product called Classic Tee at $24 in the Tees category.",
+              "description": "Change a product's price",
+              "prompt": "Raise the price of Colombia Huila Supremo by $1.",
               "tools_triggered": [
                 "list_stores",
-                "get_store",
-                "create_product"
+                "search_products",
+                "get_product",
+                "update_product"
               ],
-              "expected_behavior": "Checks the store's currency and variant options, asks which variants to offer if the store has any, creates Classic Tee at 24 in Tees, and says whether it is live or pending sync."
+              "expected_behavior": "Finds the product, asks for confirmation with the new price, then raises the price of every variant by $1, and says whether the change is live or pending sync."
             },
             {
-              "description": "Ship an order with tracking",
-              "prompt": "Mark my latest order as shipped with tracking number 1Z999AA10123456784.",
+              "description": "List pending orders",
+              "prompt": "Show me all my pending orders.",
+              "tools_triggered": [
+                "list_stores",
+                "list_orders"
+              ],
+              "expected_behavior": "Lists every pending order, newest first, with each one's number, customer, total and date, and leaves out orders with any other status."
+            },
+            {
+              "description": "Ship an order",
+              "prompt": "Mark my newest pending order as shipped",
               "tools_triggered": [
                 "list_stores",
                 "list_orders",
                 "get_order",
                 "update_order_status"
               ],
-              "expected_behavior": "Finds the newest order, asks for confirmation naming the customer who will be emailed, then sets the order to shipped with the tracking number in the note and confirms."
+              "expected_behavior": "Finds the newest pending order, asks for confirmation naming the customer who will be emailed, then marks it as shipped."
             },
             {
-              "description": "Weekly sales summary",
-              "prompt": "What sold this week in my store?",
+              "description": "Monthly sales summary",
+              "prompt": "How were my sales this month?",
               "tools_triggered": [
                 "list_stores",
                 "get_sales_summary"
               ],
-              "expected_behavior": "Reports the last 7 days' orders, sales in the store's currency, average order value, conversion rate and top products, each compared with the previous 7 days."
+              "expected_behavior": "Reports this month's orders, sales in the store's currency, average order value and top products, each compared with the previous period."
             },
             {
-              "description": "Write and publish an About page",
-              "prompt": "Write an About page for my store.",
+              "description": "Change the storefront theme",
+              "prompt": "Switch my store to the Elegant theme style with Terracotta colors.",
               "tools_triggered": [
                 "list_stores",
-                "get_store",
-                "create_page"
+                "update_design"
               ],
-              "expected_behavior": "Drafts an About page from the store's name and products, asks for approval, creates the page and shares its storefront URL."
+              "expected_behavior": "Changes the theme to the Elegant style and Terracotta colors without asking first, then shares the storefront URL."
             }
           ],
           "negative": [
@@ -104,11 +105,11 @@
             },
             {
               "description": "Deleting a store stays in the dashboard",
-              "prompt": "Delete my Store.link store."
+              "prompt": "Delete my Ember & Oak Coffee Roasters store."
             },
             {
-              "description": "Instructions in customer-written order notes are not followed",
-              "prompt": "Do what the note on my latest order says."
+              "description": "Payment settings stay in the dashboard",
+              "prompt": "Connect my Stripe account so customers can pay by card."
             }
           ]
         }
