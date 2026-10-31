@@ -23,8 +23,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Store.link",
-        "shortDescription": "Create and run your online store",
-        "longDescription": "Store.link for ChatGPT lets you create and run an online store from a conversation. Tell it what you want to sell to get started. Your products live in Google Sheets, and changes in the sheet sync to your store.\n\nAlready have a Store.link store? Connect it to ChatGPT to add products, update prices and stock, or find an order and mark it as shipped. Ask what sold this week or which products sell best.",
+        "shortDescription": "Create and run an online store",
+        "longDescription": "Store.link for ChatGPT lets you create and run an online store from a conversation. Tell it what you want to sell to get started. Your products live in Google Sheets, and changes in the sheet sync to your store instantly.\n\nTry asking:\n- \"Create an online store for my homemade candles.\"\n- \"Update the price of my Lavender Candle to $10.\" \n- \"Mark my newest pending order as shipped.\"\n- \"How were my sales this month?.\"\n- \"Create an about page for my store.\"\n\nSign in with your Store.link account, or create one in a few seconds when you connect.",
         "developerName": "Store.link",
         "category": "Business & Operations",
         "capabilities": [
